@@ -1,0 +1,335 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {}
+// .StyleLink {
+//     :hover{
+//         .StyleLink .StyleMasker{
+//             height: 100px;
+//         }
+//     }
+// }
+.StyleMasker{
+    z-index: 10;
+}
+.StyleMask{
+    z-index: 10;
+}
+.StyleLink:hover .StyleMasker {
+    height: 100%;
+    transition-duration: 400ms;
+    background-color: #654d0f85;
+    font-size:larger;
+    font-weight: bold;
+    color: white;
+}
+.StyleLink:hover .StyleMask {
+    height: 100%;
+    transition-duration: 400ms;
+    background-color: #122e4b8f;
+    font-size: larger;
+    color: white;
+}
+.showcase {
+    position: relative;
+    display: block;
+    width: 25%; /* 或者使用Tailwind的w-[25%] */
+    height: 216px; /* 或者使用Tailwind的h-[216px] */
+  }
+
+.showcase::before {
+overflow: hidden;
+font-size: x-large;
+font-weight: bolder;
+word-break: word-break;
+content: "Mikasa f/w Collections\A'Flower time'";
+white-space: pre;
+position: absolute;
+top: 0;
+right: 100%;
+bottom: 0;
+left: 0;
+background: rgba(0, 0, 0, 0.5); /* 黑色半透明遮罩 */
+color: white; /* 文字颜色 */
+display: flex;
+align-items: center;
+justify-content: center;
+transition: right 0.5s ease-in-out;
+opacity: 0;
+}
+
+  .showcase:hover::before {
+    right: 0;
+    opacity: 1;
+  }
+
+.showcase2::before {
+overflow: hidden;
+font-size: x-large;
+font-weight: bolder;
+word-break: word-break;
+content: "Elegant Attire: \a A Guide to Sophisticated Dressing";
+white-space: pre;
+position: absolute;
+top: 0;
+right: 100%;
+bottom: 0;
+left: 0;
+background: rgba(0, 0, 0, 0.5); /* 黑色半透明遮罩 */
+color: white; /* 文字颜色 */
+display: flex;
+align-items: center;
+justify-content: center;
+transition: right 0.5s ease-in-out;
+opacity: 0;
+}
+
+  .showcase2:hover::before {
+    right: 0;
+    opacity: 1;
+  }
+   
+  .showcase3::before {
+    overflow: hidden;
+    font-size: x-large;
+    font-weight: bolder;
+    word-break: word-break;
+    content: "Urban Chic:\a Fashion for the City Streets";
+    white-space: pre;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* 黑色半透明遮罩 */
+    color: white; /* 文字颜色 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.5s ease-in-out;
+    opacity: 0;
+    }
+    
+      .showcase3:hover::before {
+        right: 0;
+        opacity: 1;
+      }  
+    
+      .showcase4::before {
+        overflow: hidden;
+        font-size: x-large;
+        font-weight: bolder;
+        word-break: word-break;
+        content: "Bohemian Rhapsody:\a Embracing the Free Spirit";
+        white-space: pre;
+        position: absolute;
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5); /* 黑色半透明遮罩 */
+        color: white; /* 文字颜色 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.5s ease-in-out;
+        opacity: 0;
+        }
+        
+          .showcase4:hover::before {
+            right: 0;
+            opacity: 1;
+          }  
+    
+          .showcase5::before {
+            overflow: hidden;
+            font-size: x-large;
+            font-weight: bolder;
+            word-break: word-break;
+            content: "Vintage Vogue:\a The Charm of Retro Fashion";
+            white-space: pre;
+            position: absolute;
+            top: 0;
+            right: 100%;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5); /* 黑色半透明遮罩 */
+            color: white; /* 文字颜色 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: right 0.5s ease-in-out;
+            opacity: 0;
+            }
+            
+              .showcase5:hover::before {
+                right: 0;
+                opacity: 1;
+              }  
+              .showcase6::before {
+                overflow: hidden;
+                font-size: large;
+                font-weight: bolder;
+                word-break: word-break;
+                content: "Casual Comfort:\a Mastering \athe Art of Relaxed Style";
+                white-space: pre;
+                position: absolute;
+                top: 0;
+                right: 100%;
+                bottom: 0;
+                left: 0;
+                background: rgba(0, 0, 0, 0.5); /* 黑色半透明遮罩 */
+                color: white; /* 文字颜色 */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: right 0.5s ease-in-out;
+                opacity: 0;
+                }
+                
+                  .showcase6:hover::before {
+                    right: 0;
+                    opacity: 1;
+                  }  
+                  .showcase7::before {
+                    overflow: hidden;
+                    font-size: x-large;
+                    font-weight: bolder;
+                    word-break: word-break;
+                    content: "Athleisure Trends:\a Where Comfort Meets Style";
+                    white-space: pre;
+                    position: absolute;
+                    top: 0;
+                    right: 100%;
+                    bottom: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, 0.5); /* 黑色半透明遮罩 */
+                    color: white; /* 文字颜色 */
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: right 0.5s ease-in-out;
+                    opacity: 0;
+                    }
+                    
+                      .showcase7:hover::before {
+                        right: 0;
+                        opacity: 1;
+                      }  
+                      .showcase8::before {
+                        overflow: hidden;
+                        font-size: x-large;
+                        font-weight: bolder;
+                        word-break: word-break;
+                        content: "Couture Craftsmanship:\a The Art of Luxury Fashion";
+                        white-space: pre;
+                        position: absolute;
+                        top: 0;
+                        right: 100%;
+                        bottom: 0;
+                        left: 0;
+                        background: rgba(0, 0, 0, 0.5); /* 黑色半透明遮罩 */
+                        color: white; /* 文字颜色 */
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: right 0.5s ease-in-out;
+                        opacity: 0;
+                        }
+                        
+                          .showcase8:hover::before {
+                            right: 0;
+                            opacity: 1;
+                          }  
+                         
+// .StyleLink:hover{
+//     .StyleLink::before{
+//         content:'';
+//         position:absolute;
+//         top:0;
+//         left:0;
+//         width:100%;
+//         height:300px;
+//         filter: blur(5px);
+//         background: inherit;
+//         z-index: 2;
+
+// }}
+// .StyleLink:hover
+.uk-active{
+    color: #EF5533;
+}
+.StyleLink:hover::before{
+    content:'';
+    position:absolute;
+    
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    filter: blur(2px);
+    background: inherit;
+    z-index: 1;
+    transition-duration: 1000ms;
+}
+.CategoryLabel{
+    top: -5%;
+    left: 20%;
+    // transform: translate(-50%, -30%);
+    display: inline-block;
+    margin: 0 0.5rem;
+  
+    // animation: swing infinite; /* 引用動畫的 @keyframe 名稱 */
+    // animation-duration: 5s; /* 別忘了設定持續時間 */
+}
+.CategoryFontFamily{
+    font-family: figma hand;
+}
+.CategoryLabel:hover{
+    animation: none;
+
+}
+.CategoryDiv:hover .CategoryLabel{
+    animation: none;
+}
+.CategoryDiv:hover {
+    background-image: (url(/src/img/index_outerhover.png))
+}
+// .CategoryDiv:hover::before{
+//     content:'';
+//     position:absolute;
+    
+//     top:0;
+//     left:0;
+//     width:100%;
+//     height:100%;
+//     filter: blur(2px);
+//     background: inherit;
+//     z-index: 1;
+//     transition-duration: 1000ms;
+// }
+
+.fontFamilysecHand{
+    font-family: Inter;
+}
+
+.nav_Men:hover .nav_MenChild{
+    display: block;
+    // transition-duration: 750ms;
+    // transition-delay: 0ms;
+}
+.nav_MenChildJacket:hover .nav_MenChildJacketList{
+    display: grid;
+}
+.secondhand_TextBorder{
+    font-family: Inter;
+    line-height: 17px;
+    font-weight: 600;
+    color: #204970;
+    text-shadow: 0 2px #ffffff, 0 -2px #ffffff, 2px 0 #ffffff, -2px 0 #ffffff;
+
+}
+.secondhand_FirstText{
+    -webkit-text-stroke: 1px white;
+}

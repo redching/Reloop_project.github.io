@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8"/>
+    
+    <link rel="icon" href="/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Reloop 你的二手衣網站</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="scss/main.scss">
+    <style>
+        .product-button {
+            background-image: url('https://ik.imagekit.io/reloopproject/img/productcollectionicon.png?updatedAt=1708581224384'); /* 初始背景 */
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: background-image 0.5s ease;
+        }
+
+        .product-button.selected {
+            background-image: url('https://ik.imagekit.io/reloopproject/img/productcollectioniconfocus.png?updatedAt=1708581224540'); /* 被选中状态的背景 */
+        }
+    </style>
+</head>
+<body>
+    <%-include("include/header.ejs")%><!-- header -->
+    <div class="flex w-full h-auto px-[7%] py-[50px] justify-between"><!-- 內容 -->
+        <div class="w-[20%]"><!-- 產品篩選 -->
+            <div class="bg-[#ffb80349] px-4 py-6 pt-12 rounded-xl">
+                <div class="h-[32px] w-full flex bg-white justify-center items-center mb-3 rounded-full border border-[#2571bc]"><!-- searchBar -->
+                    <input class="h-full w-[80%] rounded-md" placeholder="搜尋關鍵字" style="outline: none;" type="text"><button class="bg-[url('/img/search.png')] h-[24px] w-[24px] bg-cover"></button>
+                </div>
+                <ul uk-accordion id="selectedbar" class="font-bold"><!-- 篩選器 -->
+                    <li class="font-bold"><!-- 類型 -->
+                        <a class="uk-accordion-title h-[22px] text-lg" href>類型</a>
+                        <ul uk-accordion class="uk-accordion-content w-[80%] flex flex-col ml-auto"><!-- 類型底層篩選 -->
+                            <li><!-- 上著 -->
+                                <a class="uk-accordion-title text-base h-[20px]" href>上著</a>
+                                <div class="uk-accordion-content flex flex-col gap-1">
+                                    <div class="grid grid-cols-3 gap-1">
+                                        <div><input type="checkbox">長袖</div>
+                                        <div><input type="checkbox">短袖</div>
+                                        <div><input type="checkbox">無袖</div>
+                                        <div><input type="checkbox">平口</div>
+                                        <div><input type="checkbox">帽T</div>
+                                        <div><input type="checkbox">襯衫</div>
+                                        <div><input type="checkbox">背心</div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-1">
+                                        <div class=""><input type="checkbox">2nd設計款</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><!-- 下著 -->
+                                <a class="uk-accordion-title text-base h-[20px]" href>下著</a>
+                                <div class="uk-accordion-content flex flex-col gap-1">
+                                    
+                                    <div class="grid grid-cols-2 gap-1">
+                                        <div><input type="checkbox">長褲</div>
+                                        <div><input type="checkbox">短褲</div>
+                                        <div><input type="checkbox">七分褲</div>
+                                        <div><input type="checkbox">防風褲</div>
+                                        <div class=""><input type="checkbox">2nd設計款</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><!-- 套裝 -->
+                                <a class="uk-accordion-title text-base h-[20px]" href>套裝</a>
+                                <div class="uk-accordion-content flex flex-col gap-1">
+                                    <div class="grid grid-cols-2 gap-1">
+                                        <div><input type="checkbox">西裝</div>
+                                        <div><input type="checkbox">禮服</div>
+                                        <div><input type="checkbox">牛仔</div>
+                                        <div><input type="checkbox">動物裝</div>
+                                    </div>
+                                    
+                                    <div class=""><input type="checkbox">2nd設計款</div>
+                                    
+                                </div>
+                            </li>
+                            <li><!-- 洋裝 -->
+                                <a class="uk-accordion-title text-base h-[20px]" href>洋裝</a>
+                                <div class="uk-accordion-content flex flex-col gap-1">
+                                    <div class="grid grid-cols-2 gap-1">
+                                        <div><input type="checkbox">V領</div>
+                                        <div><input type="checkbox">ㄩ領</div>
+                                        <div><input type="checkbox">排扣</div>
+                                        <div><input type="checkbox">襯衫式</div>
+                                        <div><input type="checkbox">一字領</div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-1">
+                                        <div class=""><input type="checkbox">荷葉滾邊</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><!-- 機能型 -->
+                                <a class="uk-accordion-title text-base h-[20px]" href>機能型</a>
+                                <div class="uk-accordion-content flex flex-col gap-1">
+                                    <div class="grid grid-cols-1 gap-1">
+                                        <div><input type="checkbox">快乾型</div>
+                                        <div><input type="checkbox">防紫外線</div>
+                                        <div><input type="checkbox">多口袋褲</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><!-- 外套/罩衫 -->
+                                <a class="uk-accordion-title text-base h-[20px]" href>外套/罩衫</a>
+                                <div class="uk-accordion-content flex flex-col gap-1">
+                                    <div class="grid grid-cols-2 gap-1">
+                                        <div><input type="checkbox">風衣</div>
+                                        <div><input type="checkbox">大衣</div>
+                                        <div><input type="checkbox">斗篷</div>
+                                        <div><input type="checkbox">軍外套</div>
+                                        <div><input type="checkbox">飛行外套</div>
+                                        <div><input type="checkbox">棒球外套</div>
+                                        <div><input type="checkbox">羽絨外套</div>
+                                        <div><input type="checkbox">西裝外套</div>
+                                    </div>
+                                    <div class="grid grid-cols-1 gap-1">
+                                        <div class=""><input type="checkbox">2nd設計款</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><!-- 配件 -->
+                                <a class="uk-accordion-title text-base h-[20px]" href>配件</a>
+                                <div class="uk-accordion-content flex flex-col gap-1">
+                                    <div class="grid grid-cols-2 gap-1">
+                                        <div><input type="checkbox">包包</div>
+                                        <div><input type="checkbox">眼鏡</div>
+                                        <div><input type="checkbox">首飾</div>
+                                        <div><input type="checkbox">耳環</div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-1">
+                                        <div class=""><input type="checkbox">2nd設計款</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="font-bold"><!-- 品牌 -->
+                        <a class="uk-accordion-title h-[22px] text-lg" href>品牌</a>
+                        <ul uk-accordion class="uk-accordion-content w-[80%] flex flex-col ml-auto" style="margin-top: 0; margin-left: 10px;"><!-- 材質底層篩選 -->
+                            <div class="uk-accordion-content flex flex-col gap-1">
+                                <div class="w-auto"><input class="" type="checkbox"> earth-music-ecology</div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> UNIQLO</div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> Nike</div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> Meier Q</div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> 其他品牌</div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="font-bold"><!-- 材質 -->
+                        <a class="uk-accordion-title h-[22px] text-lg" href>材質</a>
+                        <ul uk-accordion class="uk-accordion-content w-[80%] flex flex-col ml-auto" style="margin-top: 0; margin-left: 10px;"><!-- 材質底層篩選 -->
+                            <div class="uk-accordion-content flex flex-col gap-1">
+                                <div class="grid grid-cols-3 gap-1">
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 棉質</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 雪紡</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 針織</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 丹寧</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 亞麻</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 羊毛</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 毛線</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 羽絨</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 紗質</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 皮</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 防水</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 防風</div>
+                               </div>
+                                <div class="grid grid-cols-2 gap-1">
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 西裝布</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 聚酯纖維</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 異材質拼接</div>
+                                </div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> 其他</div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="font-bold"><!-- 場合 -->
+                        <a class="uk-accordion-title h-[22px] text-lg" href>場合</a>
+                        <ul uk-accordion class="uk-accordion-content w-[80%] flex flex-col ml-auto" style="margin-top: 0; margin-left: 10px;"><!-- 材質底層篩選 -->
+                            <div class="uk-accordion-content flex flex-col gap-1">
+                                <div class="grid grid-cols-3 gap-1">
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 婚禮</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 尾牙</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 派對</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 海邊</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 登山</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 下雪</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 正式</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 休閒</div>
+                               </div>
+                                <div class="grid grid-cols-2 gap-1">
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 歐美系</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 日韓系</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 上班族</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> Outdoor</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 街頭潮流</div>
+                                </div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> 其他</div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="font-bold"><!-- 顏色 -->
+                        <a class="uk-accordion-title h-[22px] text-lg" href>顏色</a>
+                        <ul uk-accordion class="uk-accordion-content w-[80%] flex flex-col ml-auto" style="margin-top: 0; margin-left: 10px;"><!-- 材質底層篩選 -->
+                            <div class="uk-accordion-content flex flex-col gap-1">
+                                <div class="grid grid-cols-3 gap-1">
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 紅</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 黃</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 橙</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 綠</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 黑</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 白</div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-1">
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 藍紫</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 馬卡龍</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 奶茶色</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 大地色</div>
+                                </div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> 其他</div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="font-bold"><!-- 尺寸 -->
+                        <a class="uk-accordion-title h-[22px] text-lg" href>尺寸</a>
+                        <ul uk-accordion class="uk-accordion-content w-[80%] flex flex-col ml-auto" style="margin-top: 0; margin-left: 10px;"><!-- 材質底層篩選 -->
+                            <div class="uk-accordion-content flex flex-col gap-1">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <div class="w-[150px]"><input class="" type="checkbox"> F</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> XS</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> S</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> M</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> L</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> XL</div>
+                                    <div class="w-[150px]"><input class="" type="checkbox"> 2XL</div>
+                                </div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> 其他</div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="font-bold"><!-- 衣物狀況 -->
+                        <a class="uk-accordion-title h-[22px] text-lg" href>衣物狀況</a>
+                        <ul uk-accordion class="uk-accordion-content w-[80%] flex flex-col ml-auto" style="margin-top: 0; margin-left: 10px;"><!-- 材質底層篩選 -->
+                            <div class="uk-accordion-content flex flex-col gap-1">
+                                <div class="w-[150px]"><input class="" type="checkbox"> 未拆吊牌</div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> A級(未穿過)</div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> B級</div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> C級</div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="font-bold"><!-- 價格 -->
+                        <a class="uk-accordion-title h-[22px] text-lg" href>價格</a>
+                        <ul uk-accordion class="uk-accordion-content w-[80%] flex flex-col ml-auto" style="margin-top: 0; margin-left: 10px;"><!-- 材質底層篩選 -->
+                            <div class="uk-accordion-content flex flex-col gap-1">
+                                <div class="w-[150px]"><input class="" type="checkbox"> 0~499</div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> 500~999</div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> 1000~1999</div>
+                                <div class="w-[150px]"><input class="" type="checkbox"> 2000以上</div>
+                            </div>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="w-auto h-auto grid grid-cols-3 gap-[40px] pb-12"><!-- 商品card -->
+            <div class="h-[240px] w-[240px] flex flex-col"><!-- Card1 -->
+                <div class="h-[180px] w-full">
+                    <a href="womanproduct1.html"><img src="https://ik.imagekit.io/reloopproject/img/womanproductallCard2.png?updatedAt=1708581232253" alt=""></a>
+                </div>
+                <div class="flex bg-[#ecedee] w-full h-full justify-between items-center px-3 text-[#214971]">
+                    <button class="h-[24px] w-[24px] product-button" onclick="toggleSelection(this)"></button>
+                    <div class="flex flex-col justify-center items-end gap-2">
+                        <div class="text-[11px]"><a class="hover:underline" href="womanproduct1.html">【UQ】草間彌生聯名限定點點洋裝(M) </a></div>
+                        <div class="text-[12px] font-extrabold">NTD：150</div>
+                    </div>
+                </div>
+            </div>
+            <div class="h-[240px] w-[240px] flex flex-col"><!-- Card2 -->
+                <div class="h-[180px] w-full">
+                    <a href="womanproduct1.html"><img src="https://ik.imagekit.io/reloopproject/img/womanproductallCard2.png?updatedAt=1708581232253" alt=""></a>
+                </div>
+                <div class="flex bg-[#ecedee] w-full h-full justify-between items-center px-3 text-[#214971]">
+                    <button class="h-[24px] w-[24px] product-button" onclick="toggleSelection(this)"></button>
+                    <div class="flex flex-col justify-center items-end gap-2">
+                        <div class="text-[11px]"><a class="hover:underline" href="womanproduct1.html">【UQ】草間彌生聯名限定點點洋裝(M) </a></div>
+                        <div class="text-[12px] font-extrabold">NTD：150</div>
+                    </div>
+                </div>
+            </div>            
+            <div class="h-[240px] w-[240px] flex flex-col"><!-- Card3 -->
+                <div class="h-[180px] w-full">
+                    <a href="womanproduct1.html"><img src="https://ik.imagekit.io/reloopproject/img/womanproductallCard2.png?updatedAt=1708581232253" alt=""></a>
+                </div>
+                <div class="flex bg-[#ecedee] w-full h-full justify-between items-center px-3 text-[#214971]">
+                    <button class="h-[24px] w-[24px] product-button" onclick="toggleSelection(this)"></button>
+                    <div class="flex flex-col justify-center items-end gap-2">
+                        <div class="text-[11px]"><a class="hover:underline" href="womanproduct1.html">【UQ】草間彌生聯名限定點點洋裝(M) </a></div>
+                        <div class="text-[12px] font-extrabold">NTD：150</div>
+                    </div>
+                </div>
+            </div>            
+            <div class="h-[240px] w-[240px] flex flex-col"><!-- Card4 -->
+                <div class="h-[180px] w-full">
+                    <a href="womanproduct1.html"><img src="https://ik.imagekit.io/reloopproject/img/womanproductallCard2.png?updatedAt=1708581232253" alt=""></a>
+                </div>
+                <div class="flex bg-[#ecedee] w-full h-full justify-between items-center px-3 text-[#214971]">
+                    <button class="h-[24px] w-[24px] product-button" onclick="toggleSelection(this)"></button>
+                    <div class="flex flex-col justify-center items-end gap-2">
+                        <div class="text-[11px]"><a class="hover:underline" href="womanproduct1.html">【UQ】草間彌生聯名限定點點洋裝(M) </a></div>
+                        <div class="text-[12px] font-extrabold">NTD：150</div>
+                    </div>
+                </div>
+            </div>            
+            <div class="h-[240px] w-[240px] flex flex-col"><!-- Card5 -->
+                <div class="h-[180px] w-full">
+                    <a href="womanproduct1.html"><img src="https://ik.imagekit.io/reloopproject/img/womanproductallCard2.png?updatedAt=1708581232253" alt=""></a>
+                </div>
+                <div class="flex bg-[#ecedee] w-full h-full justify-between items-center px-3 text-[#214971]">
+                    <button class="h-[24px] w-[24px] product-button" onclick="toggleSelection(this)"></button>
+                    <div class="flex flex-col justify-center items-end gap-2">
+                        <div class="text-[11px]"><a class="hover:underline" href="womanproduct1.html">【UQ】草間彌生聯名限定點點洋裝(M) </a></div>
+                        <div class="text-[12px] font-extrabold">NTD：150</div>
+                    </div>
+                </div>
+            </div>            
+            <div class="h-[240px] w-[240px] flex flex-col"><!-- Card6 -->
+                <div class="h-[180px] w-full">
+                    <a href="womanproduct1.html"><img src="https://ik.imagekit.io/reloopproject/img/womanproductallCard2.png?updatedAt=1708581232253" alt=""></a>
+                </div>
+                <div class="flex bg-[#ecedee] w-full h-full justify-between items-center px-3 text-[#214971]">
+                    <button class="h-[24px] w-[24px] product-button" onclick="toggleSelection(this)"></button>
+                    <div class="flex flex-col justify-center items-end gap-2">
+                        <div class="text-[11px]"><a class="hover:underline" href="womanproduct1.html">【UQ】草間彌生聯名限定點點洋裝(M) </a></div>
+                        <div class="text-[12px] font-extrabold">NTD：150</div>
+                    </div>
+                </div>
+            </div>            
+            <div class="h-[240px] w-[240px] flex flex-col"><!-- Card7 -->
+                <div class="h-[180px] w-full">
+                    <a href="womanproduct1.html"><img src="https://ik.imagekit.io/reloopproject/img/womanproductallCard2.png?updatedAt=1708581232253" alt=""></a>
+                </div>
+                <div class="flex bg-[#ecedee] w-full h-full justify-between items-center px-3 text-[#214971]">
+                    <button class="h-[24px] w-[24px] product-button" onclick="toggleSelection(this)"></button>
+                    <div class="flex flex-col justify-center items-end gap-2">
+                        <div class="text-[11px]"><a class="hover:underline" href="womanproduct1.html">【UQ】草間彌生聯名限定點點洋裝(M) </a></div>
+                        <div class="text-[12px] font-extrabold">NTD：150</div>
+                    </div>
+                </div>
+            </div>            
+            <div class="h-[240px] w-[240px] flex flex-col"><!-- Card8 -->
+                <div class="h-[180px] w-full">
+                    <a href="womanproduct1.html"><img src="https://ik.imagekit.io/reloopproject/img/womanproductallCard2.png?updatedAt=1708581232253" alt=""></a>
+                </div>
+                <div class="flex bg-[#ecedee] w-full h-full justify-between items-center px-3 text-[#214971]">
+                    <button class="h-[24px] w-[24px] product-button" onclick="toggleSelection(this)"></button>
+                    <div class="flex flex-col justify-center items-end gap-2">
+                        <div class="text-[11px]"><a class="hover:underline" href="womanproduct1.html">【UQ】草間彌生聯名限定點點洋裝(M) </a></div>
+                        <div class="text-[12px] font-extrabold">NTD：150</div>
+                    </div>
+                </div>
+            </div>            
+            <div class="h-[240px] w-[240px] flex flex-col"><!-- Card9 -->
+                <div class="h-[180px] w-full">
+                    <a href="womanproduct1.html"><img src="https://ik.imagekit.io/reloopproject/img/womanproductallCard2.png?updatedAt=1708581232253" alt=""></a>
+                </div>
+                <div class="flex bg-[#ecedee] w-full h-full justify-between items-center px-3 text-[#214971]">
+                    <button class="h-[24px] w-[24px] product-button" onclick="toggleSelection(this)"></button>
+                    <div class="flex flex-col justify-center items-end gap-2">
+                        <div class="text-[11px]"><a class="hover:underline" href="womanproduct1.html">【UQ】草間彌生聯名限定點點洋裝(M) </a></div>
+                        <div class="text-[12px] font-extrabold">NTD：150</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-[10%] h-auto flex flex-col justify-center items-center"><!-- 123456789頁籤 -->
+            <div class="h-[43%] w-[50px] rounded-full bg-[#ffb80349]">
+                <ul class="uk-pagination uk-flex-center uk-flex-column" uk-margin>
+                    <li class="pt-3"><a href="#"><span style="transform: rotate(90deg); color: #ef55337e;" uk-pagination-previous></span></a></li>
+                    <li class="uk-active"><span style="color: #EF5533;">1</span></li>
+                    <li><a href="#" class="hover:text-[#EF5533] text-[#ef55337e]">2</a></li>
+                    <li><a href="#" class="hover:text-[#EF5533] text-[#ef55337e]">3</a></li>
+                    <li><a href="#" class="hover:text-[#EF5533] text-[#ef55337e]">4</a></li>
+                    <li class="uk-disabled"><span class="text-center" style="transform: rotate(90deg); color: #ef55337e;">...</span></li>
+                    <li><a href="#" class="hover:text-[#EF5533] text-[#ef55337e]">48</a></li>
+                    <li class=""><a href="#"><span style="transform: rotate(90deg); color: #EF5533;" uk-pagination-next></span></a></li>
+                </ul>
+            </div>    
+        </div>
+    </div>
+    <%-include("include/footer.ejs")%><!-- footer -->
+    <script>
+        function toggleSelection(element) {
+            element.classList.toggle('selected');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>

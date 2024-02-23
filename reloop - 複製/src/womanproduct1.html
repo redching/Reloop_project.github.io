@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css" />
+    <link rel="icon" href="/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Reloop 你的二手衣網站</title>
+    <link rel="stylesheet" href="scss/main.scss">
+    <style>
+        /* 添加自定義的CSS規則 */
+        a {
+            transition: color 0.3s; /* 添加平滑的顏色過渡效果 */
+        }
+        a:hover {
+            text-decoration: none; /* 移除滑鼠懸停時的底線 */
+ /* 將滑鼠懸停時的顏色設定為橘色，你可以更改為任何顏色 */
+        }
+    </style>
+</head>
+<body class="">
+    <%-include("include/header.ejs")%><!-- header -->
+    <main class="px-[10%] flex flex-col gap-6 mb-10"><!-- 歷史標籤 -->
+        <div class="flex gap-3 justify-start">
+            <a href="#" class="hover:underline text-[#ef553380]">商品</a>
+            <div class="text-[#ef553380]">/</div>
+            <a href="#" class="hover:underline text-[#ef553380]">洋裝</a>
+            <div class="text-[#ef553380]">/</div>
+            <a href="#" class="hover:underline text-[#EF5533]">短袖</a>
+        </div>
+        <div class="flex gap-[71px] justify-center"><!-- 商品 -->
+            <div class="gap-3 flex flex-col w-[590px]"><!-- 左邊區塊 -->
+                <div id="displayArea" class="w-full h-[443px] bg-gray-200 flex items-center justify-center">
+                    <!-- 这里将展示被点击的图片 -->
+                    <img src="https://ik.imagekit.io/reloopproject/img/womanproduct1.png?updatedAt=1708581231643" alt="" id="mainImage" class="max-w-full max-h-full">
+                </div>
+                <div class="flex w-full gap-2"><!-- 四小圖 -->
+                    <img src="https://ik.imagekit.io/reloopproject/img/womanproduct1.png?updatedAt=1708581231643" alt="Image 1" class="w-full h-32 bg-gray-100 cursor-pointer" onclick="displayImage('https://ik.imagekit.io/reloopproject/img/womanproduct1.png?updatedAt=1708581231643')">
+                    <!-- C 区域图片 -->
+                    <img src="https://ik.imagekit.io/reloopproject/img/womanproduct2.png?updatedAt=1708581231376" alt="Image 2" class="w-full h-32 bg-gray-100 cursor-pointer" onclick="displayImage('https://ik.imagekit.io/reloopproject/img/womanproduct2.png?updatedAt=1708581231376')">
+                    <img src="https://ik.imagekit.io/reloopproject/img/womanproduct3.png?updatedAt=1708581232218" alt="Image 1" class="w-full h-32 bg-gray-100 cursor-pointer" onclick="displayImage('https://ik.imagekit.io/reloopproject/img/womanproduct3.png?updatedAt=1708581232218')">
+                    <img src="https://ik.imagekit.io/reloopproject/img/womanproduct4.png?updatedAt=1708581232461" alt="Image 1" class="w-full h-32 bg-gray-100 cursor-pointer" onclick="displayImage('https://ik.imagekit.io/reloopproject/img/womanproduct4.png?updatedAt=1708581232461')">
+                </div>
+            </div>
+            <div class="w-[538px] text-[#214971] flex flex-col justify-between font-semibold"><!-- 右邊區塊 -->
+                <div class="text-[#EF5533] text-2xl font-bold">
+                    【UQ】草間彌生聯名限定點點洋裝  (M) 
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div>品牌 : Uniqlo</div>
+                    <div>原品牌尺寸 : M</div>
+                    <div>平量尺寸 : 胸圍 / 44cm ; 腰圍 / 48cm ; 衣長 / 90cm ; 袖長 / --</div>
+                    <div>商品描述 :<span class="text-[#ef5533]"> #純棉 #薄紗 #幾何 #無袖 # 夏季洋裝</span></div>
+                    <div>衣物狀況 : 4</div>
+                    <div>商品編號 : 10991</div>
+                </div>
+                <div>
+                    <div class="flex">
+                        <img class="w-[24px] h-[24px]" src="https://ik.imagekit.io/reloopproject/img/productlebalicon.png?updatedAt=1708581226882" alt="">
+                        <div>除活動出清，商品皆享有7日無條件退貨</div>
+                    </div>
+                    <div class="flex">
+                        <img class="w-[24px] h-[24px]" src="https://ik.imagekit.io/reloopproject/img/productlebalicon.png?updatedAt=1708581226882" alt="">
+                        <div>售出後會在3-5天內下架，因此無法查看商品資訊，若購買後需要查看，請至會員專區 / 訂單查詢，或將訂單編號私訊客服。</div>
+                    </div>
+                </div>
+                <div class="font-extrabold text-[#ef5533] text-2xl">
+                    NTD：500 元
+                </div>
+                <div class="flex justify-between"><!-- 收藏、購買按鈕 -->
+                    <div>
+                        <button class="flex border-2 border-[#214971] px-4 py-2 h-[40px] w-[112px] justify-center items-center rounded-lg hover:bg-[#e97171]">
+                            <img src="https://ik.imagekit.io/reloopproject/img/productcollectionicon.png?updatedAt=1708581224384" alt="">
+                            <div>收藏</div>
+                        </button>
+                    </div>
+                    <div>
+                        <div class="flex gap-4">
+                            <button class="flex border-2 border-[#214971] px-4 py-2 h-[35px] w-[120px] justify-center items-center rounded-lg">
+                                <div>加入購物車</div>
+                            </button>
+                            <button class="flex border-2 border-[#214971] px-4 py-2 h-[35px] w-[112px] justify-center items-center rounded-lg font-bold bg-[#ffb703]">
+                                <div>立即購買</div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-[32px] text-[#214971] border-b-4 border-[#214971] font-bold"><!-- 商品介紹 -->
+            商品介紹
+        </div>
+        <div class="flex flex-col items-center"><!-- 商品介紹圖片 -->
+            <div>
+                <img uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; end: 80vh + 50%;" src="https://ik.imagekit.io/reloopproject/img/productintro1.png?updatedAt=1708581226424" alt="">
+            </div>
+            <div>
+                <img uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; end: 80vh + 50%;" src="https://ik.imagekit.io/reloopproject/img/productintro2.png?updatedAt=1708581226679" alt="">
+            </div>
+            <div>
+                <img uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; end: 80vh + 50%;" src="https://ik.imagekit.io/reloopproject/img/productintro3.png?updatedAt=1708581226808" alt="">
+            </div>
+            <div>
+                <img uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; end: 80vh + 50%;" src="https://ik.imagekit.io/reloopproject/img/productintro4.png?updatedAt=1708581227877" alt="">
+            </div>
+            <div>
+                <img uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; end: 80vh + 50%;" src="https://ik.imagekit.io/reloopproject/img/productintro5.png?updatedAt=1708581227718" alt="">
+            </div>
+        </div>
+        <div class="text-[32px] text-[#EF5533] border-b-4 border-[#EF5533] font-bold"><!-- 其他推薦 -->
+            其他推薦
+        </div>
+        <div uk-slider class="border-b-4 border-[#EF5533]"><!-- 其他推薦輪播圖 -->
+
+            <div class="uk-position-relative">
+        
+                <div class="uk-slider-container uk-light">
+                    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened1.jpg?updatedAt=1708581233524" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>1</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened2.jpg?updatedAt=1708581234258" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>2</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened3.jpg?updatedAt=1708581234475" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>3</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened4.jpg?updatedAt=1708581234336" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>4</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened5.jpg?updatedAt=1708581235975" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>5</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened6.jpg?updatedAt=1708581236160" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>6</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened7.jpg?updatedAt=1708581236357" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>7</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened8.jpg?updatedAt=1708581236588" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>8</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened9.jpg?updatedAt=1708581237144" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>9</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened10.jpg?updatedAt=1708581232990" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>10</h1></div>
+                        </li>
+                    </ul>
+                </div>
+        
+                <div class="uk-hidden@s uk-light">
+                    <a class="uk-position-center-left uk-position-small" href uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small" href uk-slidenav-next uk-slider-item="next"></a>
+                </div>
+        
+                <div class="uk-visible@s">
+                    <a class="uk-position-center-left-out uk-position-small" href uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a class="uk-position-center-right-out uk-position-small" href uk-slidenav-next uk-slider-item="next"></a>
+                </div>
+        
+            </div>
+        
+            <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+        
+        </div>
+        <a href="#totop" class="h-[80px] w-[80px] bg-[#FFB703] rounded-full border-[#214971] border-4 fixed z-20 bottom-[10%] right-[5%] flex justify-center items-center">
+            <img src="https://ik.imagekit.io/reloopproject/img/totop.png?updatedAt=1708581230391" alt="">
+        </a>
+    </main>
+    <%-include("include/footer.ejs")%><!-- footer -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit-icons.min.js"></script>
+<script>
+    // JavaScript 用于图片点击和展示逻辑
+    function displayImage(imageUrl) {
+        const displayArea = document.getElementById('mainImage');
+        displayArea.src = imageUrl;
+        displayArea.classList.remove('hidden'); // 显示图片
+    }
+</script>
+</body>
+</html>

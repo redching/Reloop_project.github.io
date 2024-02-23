@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" href="/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Reloop 你的二手衣網站</title>
+        <!-- 引入 Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="scss/main.scss">
+    <link rel="stylesheet" href="scss/index.css">
+</head>
+<body>
+  <!-- <div class="ontop"></div> -->
+  <%-include("include/header.ejs")%><!-- header -->
+  <main class="totop">
+    <div id="carouselExampleInterval" class="carousel slide h-[483px] w-auto px-[10%]" data-bs-ride="carousel"><!-- banner -->
+      <div class="carousel-inner h-[483px] z-10"><!-- banner外框 -->
+        <div class="carousel-item h-[483px] active relative" data-bs-interval="7000" style="height: 483px;">
+          <img src="https://ik.imagekit.io/reloopproject/img/banner1.png?updatedAt=1708605990479" class="d-block h-[483px] w-[100%]" style="object-fit: fill;" alt="...">
+          <div>
+            <img class="absolute z-10 right-6 bottom-10" src="https://ik.imagekit.io/reloopproject/img/banner1logo.png?updatedAt=1708605989038" alt="">
+          </div>
+        </div>
+        <div class="carousel-item h-[483px]" data-bs-interval="2000">
+          <img src="https://ik.imagekit.io/reloopproject/img/banner2.jpg?updatedAt=1708605991522" class="d-block h-[483px] w-[100%]" style="object-fit: cover;" alt="...">
+        </div>
+        <div class="carousel-item h-[483px]" data-bs-interval="2000">
+          <img style="object-fit:fill;" src="https://ik.imagekit.io/reloopproject/img/banner3.jpg?updatedAt=1708605991908" class="d-block h-[483px] w-[100%]" style="object-fit: cover;" alt="...">
+        </div>
+        <div class="carousel-item h-[483px]">
+          <img style="object-fit: fill;" src="https://ik.imagekit.io/reloopproject/img/banner4.jpg?updatedAt=1708605992070" class="d-block h-[483px] w-[100%]" style="object-fit: cover;" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-black rounded-full" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-black rounded-full" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="relative h-[500px] w-full flex items-center justify-between px-44 pr-64 py-10 bg-[#EEEEEE] fontFamilysecHand"><!-- 回收流程 -->
+      <div class="h-[183px] w-[200px] text-[50px] font-bold secondhand_FirstText">
+        二手衣<br>回收流程
+      </div>
+      <div class="h-[183px] w-[183px]">
+        <div class="relative">
+          <img src="https://ik.imagekit.io/reloopproject/img/secondhandbgimg.png?updatedAt=1708581230111" alt="">
+          <div class="absolute top-0 left-3 text-5xl font-bold secondhand_TextBorder text-[#214971]">
+            01
+          </div>
+          <div class="absolute bottom-[20%] left-[30%] text-[40px] font-bold tracking-tighter text-white fontFamilysecHand">
+            <p>品質</p>
+            <p>審查</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-[40px] h-[20px] font-bold text-5xl text-[#214971]">></div>
+      <div class="h-[183px] w-[183px]">
+        <div class="relative">
+          <img src="https://ik.imagekit.io/reloopproject/img/secondhandbgimg.png?updatedAt=1708581230111" alt="">
+          <div class="absolute top-0 left-3 text-5xl font-bold secondhand_TextBorder text-[#214971]">
+            02
+          </div>
+          <div class="absolute bottom-[20%] left-[30%] text-[40px] font-bold tracking-tighter text-white text-center fontFamilysecHand">
+            <p>UV-C</p>
+            <p>消毒</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-[40px] h-[20px] font-bold text-5xl text-[#214971]">></div>
+      <div class="h-[183px] w-[183px]">
+        <div class="relative">
+          <img src="https://ik.imagekit.io/reloopproject/img/secondhandbgimg.png?updatedAt=1708581230111" alt="">
+          <div class="absolute top-0 left-3 text-5xl font-bold secondhand_TextBorder text-[#214971]">
+            03
+          </div>
+          <div class="absolute bottom-[20%] left-[30%] text-[40px] font-bold tracking-tighter text-white fontFamilysecHand">
+            <p>詳細</p>
+            <p>介紹</p>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0"><img class=" h-[250px] w-[250px]" src="https://ik.imagekit.io/reloopproject/img/login-l-icon.png?updatedAt=1708581220386" alt=""></div><!-- 1 -->
+      <div class="absolute h-[px] w-[px] top-6 left-[17%]"><img class=" h-[160px] w-[160px]" src="https://ik.imagekit.io/reloopproject/img/login-r-icon.png?updatedAt=1708581220869" alt=""></div><!-- 2 -->
+      <div class="absolute h-[px] w-[px] bottom-0 right-[30%]"><img class=" h-[160px] w-[160px]" src="https://ik.imagekit.io/reloopproject/img/flower5.png?updatedAt=1708581203206" alt=""></div><!-- 5 -->
+      <div class="absolute h-[px] w-[px] bottom-[25px] right-[60%]"><img class=" h-[60px] w-[60px]" src="https://ik.imagekit.io/reloopproject/img/login-r-icon.png?updatedAt=1708581220869" alt=""></div>
+      <div class="absolute h-[px] w-[px] top-[-80px] right-[45%]"><img class=" h-[200px] w-[200px]" src="https://ik.imagekit.io/reloopproject/img/login-l-icon.png?updatedAt=1708581220386" alt=""></div>
+      <div class="absolute h-[px] w-[px] top-[25px] right-0"><img class=" h-[180px] w-[180px]" src="https://ik.imagekit.io/reloopproject/img/login-l-icon.png?updatedAt=1708581220386" alt=""></div><!-- 6 -->
+    </div>
+    
+    <div class="h-[560px] w-auto flex">
+      <div class="flex-col items-center justify-center w-[40%] text-white bg-[#ffb703] text-center gap-10">
+        <div class="text-[100px] leading-[120px]">
+          2024<br>穿搭態度
+        </div>
+        <div class="text-[30px] text-[#214971] font-bold">
+          必收單品!!滿2件打6折
+        </div>
+      </div>
+      <div class="w-[60%] bg-cover" style="background-image: url(https://ik.imagekit.io/reloopproject/img/seasonstyle.png?updatedAt=1708581229866);"><img class="" src="" alt=""></div>
+    </div>
+    <div class="h-[800px] w-full px-[10%] flex-col flex items-center mt-5"><!-- 分類Category頁面 -->
+      <div class="flex gap-2 py-6 w-auto">
+        <div class="text-5xl font-bold CategoryFontFamily">分類</div>
+        <div class="text-5xl font-bold CategoryFontFamily">Category</div>
+      </div>
+      <div class="h-[640px] w-[1000px] flex bg-cover"  style="background-image: url(https://ik.imagekit.io/reloopproject/img/Category-background.png?updatedAt=1708581202473); background-size: 100% 100%;">
+        <div class="h-full w-[25%] flex-col">
+          <div class="CategoryDiv w-full h-[40%] relative bg-[url('https://ik.imagekit.io/reloopproject/img/index_dress.png?updatedAt=1708581207344')] hover:bg-[url('https://ik.imagekit.io/reloopproject/img/index_dresshover.png?updatedAt=1708581207683')] bg-cover"><!-- 格子編號1 -->
+            <div class="CategoryLabel h-[38px] w-[140px] pt-1 text-center font-bold text-2xl  absolute bg-[#214971] text-white CategoryFontFamily">Dress</div>
+          </div>
+          <div class="CategoryDiv w-full h-[60%] relative bg-[url('https://ik.imagekit.io/reloopproject/img/index_suit.png?updatedAt=1708581218948')] hover:bg-[url('https://ik.imagekit.io/reloopproject/img/index_suithover.png?updatedAt=1708581219297')] bg-cover"><!-- 格子編號2 -->
+            <div class="CategoryLabel h-[38px] w-[140px] pt-1 text-center font-bold text-2xl  absolute bg-[#214971] text-white CategoryFontFamily">Suit</div>
+          </div>
+        </div>
+        <div class="h-full w-[50%]">
+          <div class="CategoryDiv w-full h-[30%] relative flex"><!-- 格子編號3 -->
+            <div class="w-[33%] h-[100%] bg-[url('https://ik.imagekit.io/reloopproject/img/index_hat.png?updatedAt=1708581208929')] hover:bg-[url('https://ik.imagekit.io/reloopproject/img/index_hathover.png?updatedAt=1708581209291')] bg-cover"></div>
+            <div class="w-[33%] h-[100%] bg-[url('https://ik.imagekit.io/reloopproject/img/index_bag.png?updatedAt=1708581206473')] hover:bg-[url('https://ik.imagekit.io/reloopproject/img/index_baghover.png?updatedAt=1708581206738')] bg-cover"></div>
+            <div class="w-[33%] h-[100%] bg-[url('https://ik.imagekit.io/reloopproject/img/index_glasses.png?updatedAt=1708581208638')] hover:bg-[url('https://ik.imagekit.io/reloopproject/img/index_glasseshover.png?updatedAt=1708581208808')] bg-cover"></div>
+              <div class="CategoryLabel h-[38px] w-[140px] pt-1 text-center font-bold text-2xl  absolute bg-[#214971] text-white CategoryFontFamily">Accessories</div>
+          </div>
+          <div class="w-[50%] h-[70%] flex">
+            <div class="w-full h-full">
+              <div class="CategoryDiv w-full h-[45%] relative bg-[url('https://ik.imagekit.io/reloopproject/img/index_shirt.png?updatedAt=1708581211179')] hover:bg-[url('https://ik.imagekit.io/reloopproject/img/index_shirthover.png?updatedAt=1708581211902')] bg-cover"><!-- 格子編號4 -->
+                <div class="CategoryLabel h-[38px] w-[140px] pt-1 text-center font-bold text-2xl  absolute bg-[#214971] text-white CategoryFontFamily">Shirt</div>
+              </div>
+              <div class="CategoryDiv w-full h-[55%] relative bg-[url('https://ik.imagekit.io/reloopproject/img/index_pants.png?updatedAt=1708581210919')] hover:bg-[url('https://ik.imagekit.io/reloopproject/img/aaaabbbb.png?updatedAt=1708581192441')] bg-cover"><!-- 格子編號5 -->
+                <div class="CategoryLabel h-[38px] w-[140px] pt-1 text-center font-bold text-2xl  absolute bg-[#214971] text-white CategoryFontFamily">Pants</div>
+              </div>
+            </div>
+            <div class="w-full h-full">
+              <div class="CategoryDiv w-full h-[45%] relative bg-[url('https://ik.imagekit.io/reloopproject/img/index_Tshirt.png?updatedAt=1708581219239')] hover:bg-[url('https://ik.imagekit.io/reloopproject/img/index_Tshirthover.png?updatedAt=1708581219378')] bg-cover"><!-- 格子編號6 -->
+                <div class="CategoryLabel h-[38px] w-[140px] pt-1 text-center font-bold text-2xl  absolute bg-[#214971] text-white CategoryFontFamily">T-Shirt</div>
+              </div>
+              <div class="CategoryDiv w-full h-[55%] relative bg-[url('https://ik.imagekit.io/reloopproject/img/index_skirt.png?updatedAt=1708581214849')] hover:bg-[url('https://ik.imagekit.io/reloopproject/img/index_skirthover.png?updatedAt=1708581215242')] bg-cover"><!-- 格子編號7 -->
+                <div class="top-[-15px] CategoryLabel h-[38px] w-[140px] pt-1 text-center font-bold text-2xl  absolute bg-[#214971] text-white CategoryFontFamily">Skirt</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="h-full w-[25%] flex-col">
+          <div class="CategoryDiv w-full h-[50%] relative bg-[url('https://ik.imagekit.io/reloopproject/img/index_outer.png?updatedAt=1708581210650')] hover:bg-[url('https://ik.imagekit.io/reloopproject/img/index_outerhover.png?updatedAt=1708581210764')] bg-cover"><!-- 格子編號8 -->
+            <div class="CategoryLabel h-[38px] w-[140px] pt-1 text-center font-bold text-2xl absolute bg-[#214971] text-white CategoryFontFamily">Outer</div>
+          </div>
+          <div class="CategoryDiv w-full h-[50%] relative bg-[url('https://ik.imagekit.io/reloopproject/img/index_design.png?updatedAt=1708581207026')] hover:bg-[url('https://ik.imagekit.io/reloopproject/img/index_designhover.png?updatedAt=1708581207292')] bg-cover"><!-- 格子編號9 -->
+            <div class="CategoryLabel h-[38px] w-[140px] pt-1 text-center font-bold text-2xl  absolute bg-[#214971] text-white CategoryFontFamily">Design</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="h-[720px] w-full px-[10%] flex-col flex items-center mb-6"><!-- 風格style頁面 -->
+      <div class="flex gap-2 w-auto pb-20">
+        <div class="text-5xl font-bold">風格</div>
+        <div class="text-5xl font-bold">Style</div>
+      </div>
+      <div class="flex h-auto w-[800px] gap-3">
+        <div class="flex-col flex w-[25%] justify-between gap-3">
+          <a href="#" class="StyleLink w-full h-[310px] bg-cover relative" style="background-image: url(https://ik.imagekit.io/reloopproject/img/Rectangle%2016.png?updatedAt=1708581227572);">
+            <div class="StyleMasker z-10 flex items-center justify-center bg-[#FFB703] w-full h-20 absolute bottom-0 text-center text-sm text-[#214971] font-bold">率性套裝<br>Suit</div>
+          </a>
+          <a href="#" class="StyleLink w-full h-[310px] bg-cover relative" style="background-image: url(https://ik.imagekit.io/reloopproject/img/Rectangle%2024.png?updatedAt=1708581229037);">
+            <div class="StyleMask flex items-center justify-center bg-[#214971] w-full h-20 absolute top-0 text-center text-sm text-[#ffb703] font-bold">機能衣<br>Sportswear</div>
+          </a>
+        </div>
+        <div class="flex-col flex w-[25%] justify-between gap-3">
+          <a href="#" class="StyleLink w-full h-[372px] bg-cover relative" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_style_casual.png?updatedAt=1708581216383);">
+            <div class="StyleMasker flex items-center justify-center bg-[#FFB703] w-full h-20 absolute bottom-0 text-center text-sm text-[#214971] font-bold">休閒日常<br>Casual</div>
+          </a>
+          <a href="#" class="StyleLink w-full h-[248px] bg-cover relative" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_style_hipple.png?updatedAt=1708581216496);">
+            <div class="StyleMask flex items-center justify-center bg-[#214971] w-full h-20 absolute top-0 text-center text-sm text-[#ffb703] font-bold">復古嬉皮<br>Hippie</div>
+          </a>
+        </div>
+        <div class="flex-col flex w-[25%] justify-between gap-3">
+          <a href="#" class="StyleLink w-full h-[310px] bg-cover relative" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_style_street.png?updatedAt=1708581218036);">
+            <div class="StyleMasker flex items-center justify-center bg-[#FFB703] w-full h-20 absolute bottom-0 text-center text-sm text-[#214971] font-bold">街頭潮流<br>Street</div>
+          </a>
+          <a href="#" class="StyleLink w-full h-[310px] bg-cover relative" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_style_japanese.png?updatedAt=1708581217260);">
+            <div class="StyleMask flex items-center justify-center bg-[#214971] w-full h-20 absolute top-0 text-center text-sm text-[#ffb703] font-bold">日系<br>Japanese</div>
+          </a>
+        </div>
+        <div class="flex-col flex w-[25%] justify-between gap-3">
+          <a href="#" class="StyleLink w-full h-[341px] bg-cover relative" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_style_outdoor.png?updatedAt=1708581217973);">
+            <div class="StyleMasker flex items-center justify-center bg-[#FFB703] w-full h-20 absolute bottom-0 text-center text-sm text-[#214971] font-bold">戶外風<br>Outdoor</div>
+          </a>
+          <a href="#" class="StyleLink w-full h-[279px] bg-cover relative" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_style_party.png?updatedAt=1708581217867);">
+            <div class="StyleMask flex items-center justify-center bg-[#214971] w-full h-20 absolute top-0 text-center text-sm text-[#ffb703] font-bold">宴會禮服/派對<br>Party</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="flex-col items-center"><!-- 品牌總攬 Brands-->
+      <div class="flex gap-2 py-20 w-auto">
+        <div class="text-5xl font-bold">品牌總攬</div>
+        <div class="text-5xl font-bold">Brands</div>
+      </div>
+      <div class="flex-col gap-2">
+        <div class="flex gap-3">
+          <img src="https://ik.imagekit.io/reloopproject/img/BrandsBALENCIAGA.png?updatedAt=1708581196704" alt="">
+          <img src="https://ik.imagekit.io/reloopproject/img/BrandsUNIQLO.png?updatedAt=1708581201104" alt="">
+          <img src="https://ik.imagekit.io/reloopproject/img/Brandsnikoand.png?updatedAt=1708581200907" alt="">
+          <img src="https://ik.imagekit.io/reloopproject/img/BrandsSNIDEL.png?updatedAt=1708581200639" alt="">
+          <img src="https://ik.imagekit.io/reloopproject/img/BrandsURonlinestore.png?updatedAt=1708581201557" alt="">
+        </div>
+        <div class="flex gap-3">
+          <img src="https://ik.imagekit.io/reloopproject/img/BrandsNANO.png?updatedAt=1708581199593" alt="">
+          <img src="https://ik.imagekit.io/reloopproject/img/BrandsMISCHMASCH.png?updatedAt=1708581199133" alt="">
+          <img src="https://ik.imagekit.io/reloopproject/img/BrandsFRAYID.png?updatedAt=1708581197765" alt="">
+          <img src="https://ik.imagekit.io/reloopproject/img/BrandsMilaOwen.png?updatedAt=1708581198265" alt="">
+        </div>
+        <div class="flex gap-1">
+          <img src="https://ik.imagekit.io/reloopproject/img/BrandsMOUSSY.png?updatedAt=1708581199215" alt="">
+          <img src="https://ik.imagekit.io/reloopproject/img/BrandsLILYBROWN.png?updatedAt=1708581198349" alt="">
+          <img src="https://ik.imagekit.io/reloopproject/img/Brandsearth.png?updatedAt=1708581197441" alt="">
+          <img src="https://ik.imagekit.io/reloopproject/img/BrandsCOMMECAISM.png?updatedAt=1708581196850" alt="">
+          <img src="https://ik.imagekit.io/reloopproject/img/BrandsNICECLAUP.png?updatedAt=1708581199660" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="flex-col items-center"><!-- 熱銷品牌Brands Ranking -->
+      <div class="flex gap-2 py-20 w-auto">
+        <div class="text-5xl font-bold">熱銷品牌</div>
+        <div class="text-5xl font-bold">Brands Ranking</div>
+      </div>
+      <div class="flex gap-32">
+        <div class="">
+          <p class="font-bold text-2xl">MEN</p>
+          <ul>
+            <ol class="text-xl list-decimal text-start">
+              <li><a class="hover:underline text-[#EF5533]" href="">BALENCIAGA</a></li>
+              <li><a class="hover:underline text-[#EF5533]" href="">GUCCI</a></li>
+              <li><a class="hover:underline text-[#EF5533]" href="">ADIDAS</a></li>
+              <li><a class="hover:underline text-[#214971]" href="">NORTH FACE</a></li>
+              <li><a class="hover:underline text-[#214971]" href="">UNIQLO</a></li>
+            </ol>
+          </ul>
+        </div>
+        <div class="">
+          <p class="font-bold text-2xl">WOMEN</p>
+          <ul>
+            <ol class="text-xl list-decimal text-start">
+              <li><a class="hover:underline text-[#EF5533]" href="">BALENCIAGA</a></li>
+              <li><a class="hover:underline text-[#EF5533]" href="">NIKO AND...</a></li>
+              <li><a class="hover:underline text-[#EF5533]" href="">NEW BALANCE</a></li>
+              <li><a class="hover:underline text-[#214971]" href="">UNIQLO</a></li>
+              <li><a class="hover:underline text-[#214971]" href="">MOUSSY</a></li>
+            </ol>
+          </ul>
+        </div>
+        <div class="">
+          <p class="font-bold text-2xl">UNISEX</p>
+          <ul>
+            <ol class="text-xl list-decimal text-start">
+              <li><a class="hover:underline text-[#EF5533]" href="">DIOR</a></li>
+              <li><a class="hover:underline text-[#EF5533]" href="">GUCCI</a></li>
+              <li><a class="hover:underline text-[#EF5533]" href="">BALENCIAGA</a></li>
+              <li><a class="hover:underline text-[#214971]" href="">NIKO AND...</a></li>
+              <li><a class="hover:underline text-[#214971]" href="">UNIQLO</a></li>
+            </ol>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="flex-col items-center mb-8"><!-- 設計專欄Designer’s Little Showcase -->
+      <div class="flex gap-2 py-20 w-auto">
+        <div class="text-5xl font-bold">設計專欄</div>
+        <div class="text-5xl font-bold">Designer’s Little Showcase</div>
+      </div>
+      <div class="w-full">
+        <div class="flex">
+          <a  class="h-[216px] w-[25%] bg-cover relative showcase" style="background-image: url(https://ik.imagekit.io/reloopproject/img/designer%20showcase.png?updatedAt=1708581202711);" href=""></a>
+          <!-- <img class="h-[216px] w-[25%] bg-cover relative showcase" src="img/designer showcase.png" alt=""> -->
+          <a class="h-[216px] w-[35%] bg-cover relative showcase2" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_showcase2.png?updatedAt=1708581212121);" href=""></a>
+          <a class="h-[216px] w-[40%] bg-cover relative showcase3" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_showcase3.png?updatedAt=1708581213133);" href=""></a>
+        </div>
+        <div class="flex">
+          <a class="h-[216px] w-[35%] bg-cover relative showcase4" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_showcase4.png?updatedAt=1708581213414);" href=""></a>
+          <a class="h-[216px] w-[45%] bg-cover relative showcase5" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_showcase5.png?updatedAt=1708581213870);" href=""></a>
+          <a class="h-[216px] w-[20%] bg-cover relative showcase6" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_showcase6.png?updatedAt=1708581213538);" href=""></a>
+        </div>
+        <div class="flex">
+          <a class="h-[216px] w-[60%] bg-cover relative showcase7" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_showcase7.png?updatedAt=1708581215372);" href=""></a>
+          <a class="h-[216px] w-[40%] bg-cover relative showcase8" style="background-image: url(https://ik.imagekit.io/reloopproject/img/index_showcase8.png?updatedAt=1708581215282);" href=""></a>
+        </div>
+      </div>
+    </div>
+    <a href="#totop" class="h-[80px] w-[80px] bg-[#FFB703] rounded-full border-[#214971] border-4 fixed z-20 bottom-[10%] right-[5%] flex justify-center items-center">
+      <img src="https://ik.imagekit.io/reloopproject/img/totop.png?updatedAt=1708581230391" alt="">
+    </a>
+  </main>
+  <%-include("include/footer.ejs")%>
+  <script>
+    // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAGDsV99XP7i4LS152qALJn8a7QmAADoUo",
+  authDomain: "reloop-project.firebaseapp.com",
+  projectId: "reloop-project",
+  storageBucket: "reloop-project.appspot.com",
+  messagingSenderId: "1040212602967",
+  appId: "1:1040212602967:web:442d1fdb84cd841e02b312",
+  measurementId: "G-LQW1LLZM3D"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>

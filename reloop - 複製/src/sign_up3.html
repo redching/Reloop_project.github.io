@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" href="/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Reloop 你的二手衣網站</title>
+    <link rel="stylesheet" href="scss/main.scss">
+</head>
+<body class="">
+    <%-include("include/header.ejs")%><!-- header -->
+    <main class="bg-[#214971] h-[110vh] w-full flex justify-center items-center relative">
+        <div class="bg-white h-auto w-[30vw] rounded-2xl mt-8 pt-8 px-10 flex flex-col gap-9 pb-5">
+            <div class="flex justify-between items-center"><!-- 登入及登入按鈕 -->
+                <div class="font-bold text-4xl">加入會員</div>
+                <div class="border-2 border-[#214971] text-[#214971] rounded-md px-2 hover:text-white hover:bg-[#214971]"><button><a href="login.html">登入</a></button></div>
+            </div>
+            <div class="flex justify-center items-center text-center"><!-- 步驟123 -->
+                <div class="h-[60px] w-[60px] bg-[#D9D9D9] text-white text-[30px] rounded-full text-center flex justify-center items-center"><div>1</div></div>
+                <div class="h-[5px] w-[60px] bg-[#D9D9D9] text-white text-[30px]"></div>
+                <div class="h-[60px] w-[60px] bg-[#D9D9D9] text-white text-[30px] rounded-full text-center flex justify-center items-center"><div>2</div></div>
+                <div class="h-[5px] w-[60px] bg-[#D9D9D9] text-white text-[30px]"></div>
+                <div class="h-[60px] w-[60px] bg-[#FFB703] text-white text-[30px] rounded-full text-center flex justify-center items-center"><div>3</div></div>
+            </div>
+            <div class="text-center font-bold text-[22px]">
+                請設定登入密碼<br>(6-20碼英數字)
+            </div>
+            <div class="px-5 gap-6 flex flex-col"><!-- 輸入帳號密碼 -->
+                <div class="h-[48px] w-full">
+                    <input class="h-full w-full border-b-2 px-3" placeholder="請輸入密碼" type="text">
+                </div>
+                <div class="h-[48px] w-full">
+                    <input class="h-full w-full border-b-2 px-3" placeholder="確認密碼" type="text">
+                </div>
+                <div class="text-[18px]"><!-- 隱私權政策 -->
+                    <div>
+                        <input type="checkbox"><label for="checkinfo">我願意接收once&(_)最新優惠相關資訊</label>
+                    </div>
+                    <div>
+                        <input type="checkbox"><label for="checkprivacy">我同意網站<a href="#" class="font-bold hover:underline"> 服務條款 </a>與<a href="#" class="font-bold hover:underline"> 隱私權政策 </a></label>
+                    </div>
+                </div>
+                <div class="h-[48px] w-full mt-10">
+                    <button type="submit" class="h-[30px] w-full rounded-md bg-[#214971] text-white text-center text-base">
+                        <a href="index.html">完成</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="absolute left-[5%] top-[-5%]"><img class="" src="https://ik.imagekit.io/reloopproject/img/login-l-icon.png?updatedAt=1708581220386" alt=""></div><!-- 花的icon -->
+        <div class="absolute left-[5%] bottom-[20%]"><img class="h-[250px] w-[250px]" src="https://ik.imagekit.io/reloopproject/img/login-l-icon.png?updatedAt=1708581220386" alt=""></div>
+        <div class="absolute right-[20%] top-[25%]"><img class="h-[220px] w-[220px]" src="https://ik.imagekit.io/reloopproject/img/login-r-icon.png?updatedAt=1708581220869" alt=""></div>
+        <div class="absolute right-[10%] top-[50%]"><img class="h-[400px] w-[400px]" src="https://ik.imagekit.io/reloopproject/img/login-r-icon.png?updatedAt=1708581220869" alt=""></div>
+    </main>
+    <%-include("include/footer.ejs")%><!-- footer -->
+</body>
+</html>

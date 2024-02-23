@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css" />
+    <link rel="icon" href="/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Reloop 你的二手衣網站</title>
+    <link rel="stylesheet" href="scss/main.scss">
+    <style>
+        /* 添加自定義的CSS規則 */
+        a {
+            transition: color 0.3s; /* 添加平滑的顏色過渡效果 */
+        }
+        a:hover {
+            text-decoration: none; /* 移除滑鼠懸停時的底線 */
+ /* 將滑鼠懸停時的顏色設定為橘色，你可以更改為任何顏色 */
+        }
+    </style>
+</head>
+<body>
+    <%-include("include/header.ejs")%><!-- header -->
+    <main class="px-[10%] flex flex-col gap-6 mb-10"><!-- 歷史標籤 -->
+        <div class="text-[#ef5533] font-extrabold text-2xl" style="font-weight:bolder;"><!-- 購物車 -->
+            購物車
+        </div>
+        <div class="flex text-[#214971] font-bold gap-6"><!-- 購物車內容 -->
+            <div class="w-[70%]"><!-- 商品區塊 -->
+                <div class="flex w-full text-center border-y-2 border-[#214971] text-[#214971] font-bold py-2"><!-- 標題 -->
+                    <div class="w-[50%]">商品內容</div>
+                    <div class="w-[25%]">數量</div>
+                    <div class="w-[25%]">價格</div>
+                </div>
+                <div class="flex flex-col py-8 border-b-2"><!-- 商品1 -->
+                    <div class="flex justify-center items-center">
+                        <div class="w-[50%] flex items-center">
+                            <div class="w-[5%] flex justify-center"><input type="checkbox"></div>
+                            <div class="w-[45%] flex flex-col items-center"><div class="h-[140px]"><img src="https://ik.imagekit.io/reloopproject/img/marketcartproduct1.png?updatedAt=1708581223040" alt=""></div></div><!-- 商品圖片 -->
+                            <div class="w-[50%] flex flex-col gap-3"><!-- 商品文字內容 -->
+                                <div>
+                                    【NET】<br>
+                                    波西米亞風罩衫
+                                </div>
+                                <div class="flex gap-10">
+                                    <div>米白色</div>
+                                    <div>尺寸：M</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[25%] text-center">1</div>
+                        <div class="w-[25%] text-center">NTD：300</div>
+                    </div>
+                    <div class="flex text-[#ffb703] pl-[7%] pt-2">
+                        <img src="img/productlebalicon.png" alt="">未符合【1+1半價】資格
+                    </div>
+                </div>
+                <div class="flex justify-center items-center py-8 border-b-2"><!-- 商品2 -->
+                    <div class="w-[50%] flex items-center">
+                        <div class="w-[5%] flex justify-center"><input type="checkbox"></div>
+                        <div class="w-[45%] flex flex-col items-center"><div class="h-[140px]"><img src="https://ik.imagekit.io/reloopproject/img/marketcartproduct2.png?updatedAt=1708581223108" alt=""></div></div><!-- 商品圖片 -->
+                        <div class="w-[50%] flex flex-col gap-3"><!-- 商品文字內容 -->
+                            <div>
+                                【CHARLES & KEITH】<br>
+                                糖果色鍊條包 
+                            </div>
+                            <div class="flex gap-10">
+                                <div>粉紅色</div>
+                                <div>尺寸：F</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[25%] text-center">1</div>
+                    <div class="w-[25%] text-center">NTD：1,000</div>
+                </div>
+                <div class="flex justify-center items-center py-8 border-b-2"><!-- 商品3 -->
+                    <div class="w-[50%] flex items-center">
+                        <div class="w-[5%] flex justify-center"><input type="checkbox"></div>
+                        <div class="w-[45%] flex flex-col items-center"><div class="h-[140px]"><img src="https://ik.imagekit.io/reloopproject/img/marketcartproduct3.png?updatedAt=1708581223318" alt=""></div></div><!-- 商品圖片 -->
+                        <div class="w-[50%] flex flex-col gap-3"><!-- 商品文字內容 -->
+                            <div>
+                                【H&M】<br>
+                                豹紋太陽眼鏡
+                            </div>
+                            <div class="flex gap-10">
+                                <div>圖片色</div>
+                                <div>尺寸：F</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-[25%] text-center">1</div>
+                    <div class="w-[25%] text-center">NTD：150</div>
+                </div>
+            </div>
+            <div class="w-[30%] h-[560px] bg-[#fff4d9] relative flex flex-col gap-8 py-10 px-6 rounded-md drop-shadow-lg"><!-- 訂單明細 -->
+                <div class="absolute top-[-70px] left-[30%]"><img src="https://ik.imagekit.io/reloopproject/img/marketcartflowericon.png?updatedAt=1708581221842" alt=""></div>
+                <div class="text-2xl font-bold">訂單明細</div>
+                <div class="h-[252px] flex flex-col gap-4 border-b-2">
+                    <div class="flex justify-between">
+                        <div>金額</div>
+                        <div>NTD：1,300</div>
+                    </div>
+                    <div class="flex justify-between">
+                        <div>折扣</div>
+                        <div>NTD：0</div>
+                    </div>
+                    <div class="flex justify-between">
+                        <div>運費<span class="text-[#ffb703]"> (滿千免運)</span></div>
+                        <div>NTD：0</div>
+                    </div>
+                </div>
+                <div class="h-[137px] flex flex-col justify-between mt-[-20px]">
+                    <div class="flex justify-between text-xl font-extrabold">
+                        <div>總計</div>
+                        <div>NTD：1,300</div>
+                    </div>
+                    <div class="flex justify-end">
+                        <button class="w-[160px] h-[40px] bg-[#ef5533] text-center text-white font-bold text-xl rounded-md">
+                            <a href="checkout_page_custinfo.html">前往結帳</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-[32px] text-[#214971] border-b-4 border-[#214971] font-bold"><!-- 其他推薦 -->
+            其他推薦
+        </div>
+        <div uk-slider class="border-b-4 border-[#214971]"><!-- 其他推薦輪播圖 -->
+
+            <div class="uk-position-relative">
+        
+                <div class="uk-slider-container uk-light">
+                    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-4@m">
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened1.jpg?updatedAt=1708581233524" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>1</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened2.jpg?updatedAt=1708581234258" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>2</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened3.jpg?updatedAt=1708581234475" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>3</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened4.jpg?updatedAt=1708581234336" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>4</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened5.jpg?updatedAt=1708581235975" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>5</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened6.jpg?updatedAt=1708581236160" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>6</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened7.jpg?updatedAt=1708581236357" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>7</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened8.jpg?updatedAt=1708581236588" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>8</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened9.jpg?updatedAt=1708581237144" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>9</h1></div>
+                        </li>
+                        <li>
+                            <img src="https://ik.imagekit.io/reloopproject/img/womanproductRecommened10.jpg?updatedAt=1708581232990" style="width: 287px; height: 383px; object-fit: cover;" alt="">
+                            <div class="uk-position-center uk-panel"><h1>10</h1></div>
+                        </li>
+                    </ul>
+                </div>
+        
+                <div class="uk-hidden@s uk-light">
+                    <a class="uk-position-center-left uk-position-small" href uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small" href uk-slidenav-next uk-slider-item="next"></a>
+                </div>
+        
+                <div class="uk-visible@s">
+                    <a class="uk-position-center-left-out uk-position-small" href uk-slidenav-previous uk-slider-item="previous"></a>
+                    <a class="uk-position-center-right-out uk-position-small" href uk-slidenav-next uk-slider-item="next"></a>
+                </div>
+        
+            </div>
+        
+            <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+        
+        </div>
+        <!-- <a href="#totop" class="h-[80px] w-[80px] bg-[#FFB703] rounded-full border-[#214971] border-4 fixed z-20 bottom-[10%] right-[5%] flex justify-center items-center">
+            <img src="img/totop.png" alt="">
+        </a> -->
+    </main>
+    <%-include("include/footer.ejs")%><!-- footer -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css" />
+    <link rel="icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>webstart template (vite5 + tailwind3 + scss + ejs)</title>
+    <link rel="stylesheet" href="scss/main.scss">
+    <style>
+        /* 添加自定義的CSS規則 */
+        a {
+            transition: color 0.3s; /* 添加平滑的顏色過渡效果 */
+        }
+        a:hover {
+            text-decoration: none; /* 移除滑鼠懸停時的底線 */
+ /* 將滑鼠懸停時的顏色設定為橘色，你可以更改為任何顏色 */
+        }
+    </style>
+</head>
+<body>
+    <%-include("include/header.ejs")%><!-- header -->
+    <main class="px-[10%] flex flex-col gap-6 mb-10">
+        <div class="flex gap-3 justify-start"><!-- 歷史標籤 -->
+            <div class="text-[#ef553380]">購物車</div>
+            <div class="text-[#ef553380]">></div>
+            <div class="text-[#ef553380]">填寫資料</div>
+            <div class="text-[#ef553380]">></div>
+            <div class="text-[#EF5533] font-bold text-lg">確認付款</div>
+            <div class="text-[#ef553380]">></div>
+            <div class="text-[#ef553380]">完成</div>
+        </div>
+        <div class="flex justify-center w-full">
+            <div class="flex text-[#214971] font-bold gap-6 w-[960px]"><!-- 訂購資料內容 -->
+                <div class="w-full h-auto bg-[#fff4d9] relative flex flex-col gap-8 py-10 px-20 rounded-md drop-shadow-lg"><!-- 訂單詳情 -->
+                    <div class="text-2xl font-bold py-5">訂單詳情</div>
+                    <ul  uk-accordion="multiple: true">
+                        <li class="uk-open">
+                            <a class="uk-accordion-title text-lg font-bold" href>訂購人資料</a>
+                            <div class="uk-accordion-content border-b-2 border-[#214971]">
+                                <div>訂購人姓名 : 野原美冴</div>
+                                <div>聯絡電話 : +81-5113490074</div>
+                                <div>地址 : 春日部市雙葉町904號</div>
+                                <div>電子信箱 : misae1010@gmail.com.jp</div>
+                            </div>
+                        </li>
+                        <li class="uk-open">
+                            <a class="uk-accordion-title text-lg font-bold" href>收件人資料</a>
+                            <div class="uk-accordion-content border-b-2 border-[#214971]">
+                                <div>
+                                    <div>訂購人姓名 : 野原美冴</div>
+                                    <div>聯絡電話 : +81-5113490074</div>
+                                    <div>電子信箱 : misae1010@gmail.com.jp</div>
+                                </div>
+                                <div>
+                                    <div>收件方式 : 宅配</div>
+                                    <div>送達時間 : 10:00~11:00</div>
+                                    <div>收件地址 : 春日部市雙葉町904號</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="uk-open">
+                            <a class="uk-accordion-title text-lg font-bold" href>付款方式</a>
+                            <div class="uk-accordion-content">
+                                <div>信用卡一次付清</div>
+                                <div>捐贈發票</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div><!-- 商品 -->
+                        <div class="flex flex-col py-3"><!-- 已購商品1 -->
+                            <div class="flex justify-center items-center text-xs">
+                                <div class="w-[65%] flex items-start">
+                                    <div class="w-[25%] flex flex-col items-center"><div class="h-[80px] w-[80px]"><img src="https://ik.imagekit.io/reloopproject/img/marketcartproduct1.png?updatedAt=1708581223040" alt=""></div></div><!-- 商品圖片 -->
+                                    <div class="w-[75%] flex flex-col gap-3 text-xs"><!-- 商品文字內容 -->
+                                        <div>
+                                            【NET】
+                                            波西米亞風罩衫
+                                        </div>
+                                        <div class="flex gap-2 text-[#ef5533]">
+                                            <div>米白色</div>
+                                            <div>尺寸：M</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[10%] text-center">X 1</div>
+                                <div class="w-[25%] text-center">NTD：300</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col py-3 border-b-2"><!-- 已購商品2 -->
+                            <div class="flex justify-center items-center text-xs">
+                                <div class="w-[65%] flex items-start">
+                                    <div class="w-[25%] flex flex-col items-center"><div class="h-[80px] w-[80px]"><img src="https://ik.imagekit.io/reloopproject/img/marketcartproduct2.png?updatedAt=1708581223108" alt=""></div></div><!-- 商品圖片 -->
+                                    <div class="w-[75%] flex flex-col gap-1 text-xs"><!-- 商品文字內容 -->
+                                        <div>
+                                            【CHARLES & KEITH】<br>
+                                            糖果色鍊條包 
+                                        </div>
+                                        <div class="flex gap-2 text-[#ef5533]">
+                                            <div>粉紅色</div>
+                                            <div>尺寸：F</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[10%] text-center">X 1</div>
+                                <div class="w-[25%] text-center">NTD：1,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-[100px] flex flex-col gap-4"><!--折扣 -->
+                        <div class="flex justify-between">
+                            <div>折扣</div>
+                            <div>NTD：0</div>
+                        </div>
+                        <div class="flex justify-between">
+                            <div>運費<span class="text-[#ffb703]"> (滿千免運)</span></div>
+                            <div>NTD：0</div>
+                        </div>
+                    </div>
+                    <div class="h-[50px] flex flex-col justify-between mt-[-20px]"><!-- 金額 -->
+                        <div class="flex justify-between text-xl font-extrabold">
+                            <div>總計</div>
+                            <div>NTD：1,300</div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="w-full flex justify-center gap-[240px] pt-4"><!-- 返回及結帳按鈕 -->
+            <button><a class="text-xl font-bold px-10 py-2" href="checkout_page_custinfo.html">返回</a></button>
+            <button><a class="text-xl font-bold px-10 py-2 bg-[#ef5533] rounded text-white hover:text-white hover:bg-[#ef6e33]" href="checkout_page_finish.html">確認付款</a></button>
+        </div>
+        <!-- <a href="#totop" class="h-[80px] w-[80px] bg-[#FFB703] rounded-full border-[#214971] border-4 fixed z-20 bottom-[10%] right-[5%] flex justify-center items-center">
+            <img src="img/totop.png" alt="">
+        </a> -->
+    </main>
+    <%-include("include/footer.ejs")%><!-- footer -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css" />
+    <link rel="icon" href="/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>webstart template (vite5 + tailwind3 + scss + ejs)</title>
+    <link rel="stylesheet" href="scss/main.scss">
+    <style>
+        /* 添加自定義的CSS規則 */
+        a {
+            transition: color 0.3s; /* 添加平滑的顏色過渡效果 */
+        }
+        a:hover {
+            text-decoration: none; /* 移除滑鼠懸停時的底線 */
+ /* 將滑鼠懸停時的顏色設定為橘色，你可以更改為任何顏色 */
+        }
+    </style>
+</head>
+<body>
+    <%-include("include/header.ejs")%><!-- header -->
+    <main class="px-[10%] flex flex-col gap-6 mb-10">
+        <div class="flex gap-3 justify-start"><!-- 歷史標籤 -->
+            <div class="text-[#ef553380]">購物車</div>
+            <div class="text-[#ef553380]">></div>
+            <div class="text-[#EF5533] font-bold text-lg">填寫資料</div>
+            <div class="text-[#ef553380]">></div>
+            <div class="text-[#ef553380]">確認付款</div>
+            <div class="text-[#ef553380]">></div>
+            <div class="text-[#ef553380]">完成</div>
+        </div>
+        <div class="flex text-[#214971] font-bold gap-6"><!-- 訂購資料內容 -->
+            <div class="w-[70%] flex flex-col gap-10"><!-- 訂購資料區塊 -->
+                <div class="flex flex-col bg-[#FAFAFA] hover:border-[3px] hover:border-[#BDC8D2] rounded-lg px-8 py-10 gap-10"><!-- 訂購人資料 -->
+                    <div class="text-xl">訂購人資料</div>
+                    <div class="flex gap-6">
+                        <div class="w-[50%] flex flex-col gap-[19px]"><!-- 左邊區塊 -->
+                            <div class="w-full flex flex-col gap-1">
+                                <div>
+                                    真實姓名<span class="text-red-600">*</span>
+                                </div>
+                                <input class="rounded-md px-2 py-1 text-sm w-full border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none" type="text" placeholder="輸入訂購人姓名">
+                            </div>
+                            <div class="w-full flex flex-col gap-1">
+                                <div>
+                                    連絡電話<span class="text-red-600">*</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <select class="rounded-md px-2 py-1 text-sm w-[40%] border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none">
+                                        <option>+886臺灣</option>
+                                        <option>+1美國</option>
+                                        <option>+33法國</option>
+                                        <option>+41瑞士</option>
+                                        <option>+86中國</option>
+                                    </select>
+                                    <input class="rounded-md px-2 py-1 text-sm w-full border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none" type="text" placeholder="輸入連絡電話">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-[50%] flex flex-col gap-[19px]"><!-- 右邊區塊 -->
+                            <div class="w-full flex flex-col gap-1">
+                                <div>
+                                    地址<span class="text-red-600">*</span>
+                                </div>
+                                <input class="rounded-md px-2 py-1 text-sm w-full border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none" type="text" placeholder="輸入地址">
+                            </div>
+                            <div class="w-full flex flex-col gap-1">
+                                <div>
+                                    電子郵件<span class="text-red-600">*</span>
+                                </div>
+                                <input class="rounded-md px-2 py-1 text-sm w-full border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none" type="text" placeholder="輸入電子郵件">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-[#FAFAFA] hover:border-[3px] hover:border-[#BDC8D2] rounded-lg px-8 py-10 gap-10"><!-- 收件人資料 -->
+                    <div class="text-xl">收寄人資料
+                        <div class="text-sm pt-2">
+                            <input type="checkbox"> 同訂購人資料
+                        </div>
+                    </div>
+                    <div class="flex gap-6"><!-- 真實姓名 -->
+                        <div class="w-[50%] flex flex-col gap-[19px]"><!-- 左邊區塊 -->
+                            <div class="w-full flex flex-col gap-1">
+                                <div>
+                                    真實姓名<span class="text-red-600">*</span>
+                                </div>
+                                <input class="rounded-md px-2 py-1 text-sm w-full border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none" type="text" placeholder="輸入訂購人姓名">
+                            </div>
+                            <div class="w-full flex flex-col gap-1">
+                                <div>
+                                    電子郵件<span class="text-red-600">*</span>
+                                </div>
+                                <input class="rounded-md px-2 py-1 text-sm w-full border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none" type="text" placeholder="輸入電子郵件">
+                            </div>
+                        </div>
+                        <div class="w-[50%] flex flex-col gap-[19px]"><!-- 右邊區塊 -->
+                            <div class="w-full flex flex-col gap-1">
+                                <div>
+                                    連絡電話<span class="text-red-600">*</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <select class="rounded-md px-2 py-1 text-sm w-[40%] border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none">
+                                        <option>+886臺灣</option>
+                                        <option>+1美國</option>
+                                        <option>+33法國</option>
+                                        <option>+41瑞士</option>
+                                        <option>+86中國</option>
+                                    </select>
+                                    <input class="rounded-md px-2 py-1 text-sm w-full border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none" type="text" placeholder="輸入連絡電話">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-6"><!-- 收件方式 -->
+                        <div class="w-full flex gap-[19px]"><!-- 左邊區塊 -->
+                            <div class="w-full flex flex-col gap-1"><!-- 收件方式 -->
+                                <div>
+                                    收件方式<span class="text-red-600">*</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <select class="rounded-md px-2 py-1 text-sm w-full border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none">
+                                        <option>宅配</option>
+                                        <option>超商取貨不付款</option>
+                                        <option>超商取貨付款</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="w-full flex flex-col gap-1"><!-- 送達時間 -->
+                                <div>
+                                    送達時間<span class="text-red-600">*</span>
+                                </div>
+                                <div class="flex gap-2">                            
+                                    <select class="rounded-md px-2 py-1 text-sm w-full border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none">
+                                        <option>不指定</option>
+                                        <option>上午</option>
+                                        <option>下午</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full flex gap-[19px]"><!-- 收件人收件地址區塊 -->
+                            <div class="w-full flex flex-col gap-1">
+                                <div>
+                                    連絡電話<span class="text-red-600">*</span>
+                                </div>
+                                <div class="flex gap-2">
+                                    <input  class="rounded-md px-2 py-1 text-sm w-[20%] border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none" type="text" placeholder="郵遞區號">
+                                    <input class="rounded-md px-2 py-1 text-sm w-full border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none" type="text" placeholder="收件地址">
+                                </div>
+                            </div>
+                        </div>
+                       
+                      
+
+                    </div>
+                </div>
+                <div class="flex flex-col bg-[#FAFAFA] hover:border-[3px] hover:border-[#BDC8D2] rounded-lg px-8 py-10 gap-10"><!-- 付款方式 -->
+                    <div class="text-xl">付款方式</div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div><input type="checkbox"> 信用卡一次付清</div>
+                        <div><input type="checkbox"> 信用卡分期付款</div>
+                        <div><input type="checkbox"> ATM匯款</div>
+                        <div><input type="checkbox"> 超商繳費</div>
+                        <div><input type="checkbox"> 超商取貨付款</div>
+                        <div><input type="checkbox"> Line Pay</div>
+                        <div><input type="checkbox"> Apple Pay</div>
+                        <div><input type="checkbox"> 台灣 Pay</div>
+                        <div><input type="checkbox"> 街口支付</div>
+                    </div>
+                    <div>
+                        <div><img src="" alt=""></div>
+                        <div>本平台不會向您收取任何平台交易手續費，但下單時使用的信用卡或第三方支付平台可能會向您收取相關手續費，請參考其相關服務政策和規定，並向所選的交易服務商取得更多資訊。</div>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-[#FAFAFA] hover:border-[3px] hover:border-[#BDC8D2] rounded-lg px-8 py-10 gap-10"><!-- 折扣優惠 -->
+                    <div class="text-xl">折扣優惠</div>
+                    <div class="flex flex-col gap-2">
+                        <div>
+                            <input type="checkbox">點數折抵
+                        </div>
+                        <div class="flex justify-start items-center gap-4">
+                            <input class="rounded-md px-2 py-1 text-sm w-[40%] border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none" type="text" placeholder="輸入折抵點數">
+                            <div>目前可折抵點數 : <span class="text-red-600">120</span></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div>
+                            <input type="checkbox">點數折抵
+                        </div>
+                        <div class="flex justify-start items-center gap-4">
+                            <select class="rounded-md px-2 py-1 text-sm w-[40%] border-2 border-[#BDC8D2] h-[32px] focus:border-[#214971] outline-none">
+                                <option>選擇折價券</option>
+                                <option>新會員優惠9折</option>
+                                <option>周年慶買一送一</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-[#FAFAFA] hover:border-[3px] hover:border-[#BDC8D2] rounded-lg px-8 py-10 gap-10"><!-- 付款方式 -->
+                    <div class="text-xl">發票</div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div><input type="checkbox"> 捐贈發票</div>
+                        <div><input type="checkbox"> 手機載具</div>
+                        <div><input type="checkbox"> 索取紙本發票</div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[30%] h-[480px] bg-[#fff4d9] relative flex flex-col gap-8 py-10 px-6 rounded-md drop-shadow-lg"><!-- 訂單詳情 -->
+                <div class="absolute top-[-70px] left-[30%]"><img src="https://ik.imagekit.io/reloopproject/img/marketcartflowericon.png?updatedAt=1708581221842" alt=""></div>
+                <div class="text-2xl font-bold">訂單詳情</div>
+                <div>
+                    <div class="flex flex-col py-3"><!-- 已購商品1 -->
+                        <div class="flex justify-center items-center text-xs">
+                            <div class="w-[65%] flex items-start">
+                                <div class="w-[25%] flex flex-col items-center"><div class="h-[48px] w-[48px]"><img src="https://ik.imagekit.io/reloopproject/img/marketcartproduct1.png?updatedAt=1708581223040" alt=""></div></div><!-- 商品圖片 -->
+                                <div class="w-[75%] flex flex-col gap-3 text-xs"><!-- 商品文字內容 -->
+                                    <div>
+                                        【NET】
+                                        波西米亞風罩衫
+                                    </div>
+                                    <div class="flex gap-2 text-[#ef5533]">
+                                        <div>米白色</div>
+                                        <div>尺寸：M</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-[10%] text-center">X 1</div>
+                            <div class="w-[25%] text-center">NTD：300</div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col py-3 border-b-2"><!-- 已購商品2 -->
+                        <div class="flex justify-center items-center text-xs">
+                            <div class="w-[65%] flex items-start">
+                                <div class="w-[25%] flex flex-col items-center"><div class="h-[48px] w-[48px]"><img src="https://ik.imagekit.io/reloopproject/img/marketcartproduct2.png?updatedAt=1708581223108" alt=""></div></div><!-- 商品圖片 -->
+                                <div class="w-[75%] flex flex-col gap-1 text-xs"><!-- 商品文字內容 -->
+                                    <div>
+                                        【CHARLES & KEITH】<br>
+                                        糖果色鍊條包 
+                                    </div>
+                                    <div class="flex gap-2 text-[#ef5533]">
+                                        <div>粉紅色</div>
+                                        <div>尺寸：F</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-[10%] text-center">X 1</div>
+                            <div class="w-[25%] text-center">NTD：1,000</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-[100px] flex flex-col gap-4 border-b-2">
+                    <div class="flex justify-between">
+                        <div>折扣</div>
+                        <div>NTD：0</div>
+                    </div>
+                    <div class="flex justify-between">
+                        <div>運費<span class="text-[#ffb703]"> (滿千免運)</span></div>
+                        <div>NTD：0</div>
+                    </div>
+                </div>
+                <div class="h-[50px] flex flex-col justify-between mt-[-20px]">
+                    <div class="flex justify-between text-xl font-extrabold">
+                        <div>總計</div>
+                        <div>NTD：1,300</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full flex justify-center gap-[240px] text-[#214971] pt-4"><!-- 返回及結帳按鈕 -->
+            <button><a class="text-xl font-bold px-10 py-2" href="marketcart.html">返回</a></button>
+            <button><a class="text-xl font-bold px-10 py-2 bg-[#ef5533] rounded text-white hover:text-white hover:bg-[#ef6e33]" href="checkout_page_confirm.html">結帳</a></button>
+        </div>
+        <!-- <a href="#totop" class="h-[80px] w-[80px] bg-[#FFB703] rounded-full border-[#214971] border-4 fixed z-20 bottom-[10%] right-[5%] flex justify-center items-center">
+            <img src="img/totop.png" alt="">
+        </a> -->
+    </main>
+    <%-include("include/footer.ejs")%><!-- footer -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>
